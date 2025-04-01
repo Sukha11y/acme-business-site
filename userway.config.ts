@@ -2,7 +2,8 @@ import type { Config } from '@userway/cicd-cli'
 export default { 
   organization: "acme-kuuzi",
   project: "acme-business-site",
-  token: "nlft4mhubdo4ku7mmjrxiliiba217agkpjydpn9l",
+ // token: "bokzixnftzgnpnnfwzmqgitlnn5wvyh85rdpadui",
+  token: process.env.USERWAY_TOKEN,
   reportPaths: ["./uw-a11y-reports"],
   server: "https://api.qa.userway.dev",
 //   connection: 'https://tools.userway.dev',
