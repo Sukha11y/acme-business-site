@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const { userwayAnalysis } = require('@userway/a11y-playwright') 
+import { userwayAnalysis,setupUserway } from "@userway/a11y-playwright";
 
 test('should have the right text in the headline', async ({ page }) => {
   await page.goto('/');
