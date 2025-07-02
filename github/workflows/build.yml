@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: ['main']
   push:
-    branches: ['main','b1']
+    branches: ['main','b1','billing-feature-branch']
 jobs:
   build:
     runs-on: ubuntu-latest
