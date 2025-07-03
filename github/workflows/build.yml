@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: ['main']
   push:
-    branches: ['main','login-feature-branch']
+    branches: ['main','billing-feature-branch', 'login-feature-branch']
 jobs:
   build:
     runs-on: ubuntu-latest
