@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: ['main']
   push:
-    branches: ['main','b1']
+    branches: ['main','billing-feature-branch', 'login-feature-branch','br1']
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,23 +12,19 @@ jobs:
         node-version: [18.x]
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-
+      - uses: actions/checkout@v3
       - name: Install npm packages
         run: |
           npm install
-          npx playwright install
           nohup npm run dev > output.log 2>&1 &
           sleep 5
           curl -I http://localhost:1342/
-
-      - name: Run playwright tests
+      - name: Run Playwright tests
         run: |
+          npx playwright install chromium
           npm run test:playwright
-
+          
       - name: UserWay Accessibility Analysis
-        uses: UserWayOrg/cicd-action@dev
+        uses: UserWayOrg/cicd-action@qa
         with:
-          token: ${{ secrets.USERWAY_TOKEN }}
-          report_paths: './uw-a11y-reports'
-          verbose: 'true'
+          token: ${{ secrets.USERWAY_TOKEN }} # Ensure USERWAY_TOKEN is set in GitHub repository secrets

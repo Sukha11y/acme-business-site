@@ -10,7 +10,7 @@ npm run dev
 ```
 The app will be available at http://localhost:1342/
 ## Run e2e tests
-#### Playwright tests
+### Playwright tests
 Install chromium:
 ```
 npx playwright install chromium
