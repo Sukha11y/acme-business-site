@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: ['main']
   push:
-    branches: ['main','b1']
+    branches: ['main']
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,5 +25,18 @@ jobs:
       - name: Run playwright tests
         run: |
           npm run test:playwright
+
+          # .github/workflows/build.yml
+      - name: Install npm packages
+        run: npm ci
+        env:
+        CLOUDSMITH_TOKEN: ${{ secrets.CLOUDSMITH_TOKEN }}
+
+          # Insert your e2e test execution steps here
+
+      - name: Level CI Accessibility Analysis
+        uses: levelaccess/level-ci@main
+        env:
+        LEVEL_CI_TOKEN: ${{ secrets.LEVEL_CI_TOKEN }}
 
 

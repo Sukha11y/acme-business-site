@@ -1,8 +1,7 @@
-// filepath: /workspaces/Acme-home-page/playwright/setupPlaywright.ts
-import { setupUserway } from '@userway/a11y-playwright';
 
-setupUserway({
+import { levelSetup } from '@level-ci/a11y-playwright';
+
+levelSetup ({
   strict: false,
-  elementScreenshots: false,
-  reportPath: './uw-a11y-reports',
+  reportPath: './level-ci-reports',
 });
