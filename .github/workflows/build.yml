@@ -32,7 +32,7 @@ jobs:
         env:
          CLOUDSMITH_TOKEN: ${{ secrets.CLOUDSMITH_TOKEN }}
 
-          # Insert your e2e test execution steps here
+          # Insert your e2e test execution steps her
 
       - name: Level CI Accessibility Analysis
         uses: levelaccess/level-ci@main
