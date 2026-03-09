@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@level-ci/a11y-playwright": "^0.1.1",
-    "@level-ci/cli": "^0.1.7",
+    "@level-ci/cli": "^0.1.11",
     "@playwright/test": "^1.51.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.30",
